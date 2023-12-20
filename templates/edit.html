@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/Bootstrap.min.css' %}">
+</head>
+<body>
+    <h1 class="text alert alert-danger">update Form</h1>
+    <form action="/update/{{Student.id}}" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><input type="text" name="name" value="{{Student.name}}"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="course" value="{{Student.course}}">></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="city" value="{{Student.city}}">></td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+  
+</body>
+</html>
